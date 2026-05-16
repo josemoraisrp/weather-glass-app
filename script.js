@@ -1,8 +1,23 @@
 const botao = document.querySelector("button")
 
+const input = document.querySelector("#cidade")
+
+
 botao.addEventListener("click", buscarCidade)
 
+input.addEventListener("keypress", function(event){
+
+  if(event.key === "Enter"){
+
+    buscarCidade()
+
+  }
+
+})
+
 async function buscarCidade() {
+    document.querySelector(".loading").innerHTML =
+  "Carregando..."
 
   const cidade = document.querySelector("#cidade").value
 
@@ -14,6 +29,8 @@ async function buscarCidade() {
 
   console.log(dados)
 
+  document.querySelector(".loading").innerHTML = ""
+
   document.querySelector(".cidade").innerHTML = dados.name
 
 document.querySelector(".temp").innerHTML =
@@ -22,9 +39,17 @@ document.querySelector(".temp").innerHTML =
 document.querySelector(".description").innerHTML =
   dados.weather[0].description
 
+  const icone = dados.weather[0].icon
+
+  const clima = dados.weather[0].main
+
+document.querySelector(".icone").src =
+  `https://openweathermap.org/img/wn/${icone}@2x.png`
+
 document.querySelector(".umidade").innerHTML =
   "💧 Umidade: " + dados.main.humidity + "%"
 
 document.querySelector(".vento").innerHTML =
   "🌬️ Vento: " + dados.wind.speed + " km/h"
 }
+
