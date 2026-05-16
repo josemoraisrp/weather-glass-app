@@ -113,3 +113,15 @@ body {
     background: rgba(0,0,0,0.5);
     z-index: 1;
 }
+.icone {
+  width: 120px;
+
+  margin-top: 10px;
+}
+
+.loading {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
