@@ -44,7 +44,7 @@ Aplicação adaptada para:
 
 ## 🔗 Deploy
 
-[https://josemoraisrp.github.io/weather-glass-app/]
+https://josemoraisrp.github.io/weather-glass-app/
 
 ## 👨‍💻 Autor
 
