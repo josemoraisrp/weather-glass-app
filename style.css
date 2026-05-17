@@ -1,127 +1,408 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    font-family:Arial,sans-serif;
+
+    overflow:hidden;
 }
 
-.container {
-  width: 350px;
-  padding: 30px;
-  border-radius: 20px;
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(18px);
-  text-align: center;
-  color: white;
-  box-shadow: 0 0 25px rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow:
-  0 0 20px rgba(0,0,0,0.3),
-  0 0 30px rgba(0,191,255,0.1);
-}
-.search-box {
-    margin-top: 30px;
-    display: flex;
-    gap: 10px;
-    width: 100%;
+/* =========================
+VIDEO FUNDO
+========================= */
+
+.video-container{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
 }
 
-.search-box input {
-  flex: 1;
-  padding: 12px;
-  border: 2px solid transparent;
-  outline: none;
-  border-radius: 10px;
-  font-size: 16px;
-  transition: 0.3s;
-  background: rgba(255,255,255,0.12);
-  color: white;
-}
-.search-box input::placeholder {
-  color: rgba(255,255,255,0.7);
+.video-bg{
+
+    width:100vw;
+
+    height:100vh;
+
+    object-fit:cover;
+
+    filter:
+    blur(5px)
+    brightness(.55);
+
+    animation:
+    zoomVideo 18s linear infinite alternate;
 }
 
+@keyframes zoomVideo{
 
-.search-box button {
-    padding: 12px 18px;
-    border: none;
-    border-radius: 10px;
-    background: #00bfff;
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+}
+
+/* =========================
+OVERLAY
+========================= */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,0.75);
+
+    z-index:1;
+}
+
+/* =========================
+CARD PRINCIPAL
+========================= */
+
+.container{
+
+    width:420px;
+
+    padding:40px 35px;
+
+    border-radius:28px;
+
+    background:
+    rgba(15,23,42,0.45);
+
+    backdrop-filter:blur(22px);
+
+    text-align:center;
+
+    color:#e6f7ff;
+
+    border:
+    1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.30),
+    0 0 30px rgba(0,191,255,0.08);
+
+    transition:.4s;
+}
+
+.container:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 45px rgba(0,191,255,0.18);
+}
+
+/* =========================
+TÍTULOS
+========================= */
+
+h1{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#e6f7ff;
+
+    text-shadow:
+    0 0 20px rgba(0,191,255,0.25);
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    color:#b8dff5;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    margin-bottom:10px;
+}
+
+/* =========================
+SEARCH BOX
+========================= */
+
+.search-box{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:12px;
+
+    width:100%;
+}
+
+/* =========================
+INPUT
+========================= */
+
+.search-box input{
+
+    flex:1;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    border:
+    1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(10px);
+
+    color:#e6f7ff;
+
+    padding-left:20px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    box-shadow:
+    0 0 10px rgba(0,191,255,0.08);
+}
+
+.search-box input::placeholder{
+
+    color:#8fbfd4;
+
+    font-weight:400;
+}
+
+.search-box input:focus{
+
+    border:
+    1px solid #00bfff;
+
+    box-shadow:
+    0 0 18px rgba(0,191,255,0.35);
+
+    transform:translateY(-1px);
+}
+
+/* =========================
+BOTÃO
+========================= */
+
+.search-box button{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00bfff,
+        #0077ff
+    );
+
     color:white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    min-width: 110px;
+
+    font-weight:800;
+
+    font-size:17px;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    min-width:120px;
 }
 
-.search-box button:hover {
-  background: #009acd;
-  transform: scale(1.05);
+.search-box button:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(0,191,255,0.25);
 }
 
-.weather-info {
-  margin-top: 30px;
-  color: white;
+/* =========================
+CLIMA
+========================= */
+
+.weather-info{
+
+    margin-top:35px;
+
+    color:white;
+
+    transition:
+    opacity .4s ease,
+    transform .4s ease;
 }
 
-.temp {
-  font-size: 60px;
-  font-weight: bold;
-  margin: 20px 0;
-  text-shadow: 0 0 20px rgba(255,255,255,0.15);
+.loading-weather{
 
+    opacity:.5;
+
+    transform:scale(.98);
 }
 
-.description {
-  font-size: 22px;
-  margin-bottom: 20px;
+/* =========================
+TEMPERATURA
+========================= */
+
+.temp{
+
+    font-size:64px;
+
+    font-weight:800;
+
+    margin:20px 0;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.15);
 }
 
-.details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  font-size: 15px;
+/* =========================
+DESCRIÇÃO
+========================= */
+
+.description{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#b8dff5;
+
+    margin-bottom:20px;
 }
 
-.video-container {
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -2;
+/* =========================
+DETALHES
+========================= */
+
+.details{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:25px;
+
+    gap:15px;
+
+    font-size:17px;
+
+    color:#e6f7ff;
 }
 
-.video-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* =========================
+ÍCONE
+========================= */
+
+.icone{
+
+    width:130px;
+
+    margin-top:10px;
+
+    filter:
+    drop-shadow(
+        0 0 10px rgba(255,255,255,0.2)
+    );
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 1;
-}
-.icone {
-  width: 120px;
+/* =========================
+LOADING
+========================= */
 
-  margin-top: 10px;
+.loading{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#e6f7ff;
+
+    font-weight:700;
 }
 
-.loading {
-  margin-top: 20px;
-  font-size: 18px;
-  color: white;
-  font-weight: bold;
+/* =========================
+RESPONSIVO
+========================= */
+
+@media screen and (max-width:500px){
+
+    .container{
+
+        width:100%;
+
+        padding:35px 25px;
+    }
+
+    h1{
+
+        font-size:34px;
+    }
+
+    .temp{
+
+        font-size:54px;
+    }
+
+    .search-box{
+
+        flex-direction:column;
+    }
+
+    .search-box button{
+
+        width:100%;
+    }
+
+    .details{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:12px;
+    }
 }
