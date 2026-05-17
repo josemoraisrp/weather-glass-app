@@ -1,4 +1,4 @@
-# 🌤️ Weather App
+# 🌦️ Clima Agora
 
 Aplicação de previsão do tempo desenvolvida com HTML, CSS e JavaScript, consumindo dados em tempo real através da API OpenWeather.
 
