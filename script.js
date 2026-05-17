@@ -10,6 +10,9 @@ const weatherInfo =
 const loading =
     document.querySelector(".loading")
 
+const iconeClima =
+    document.querySelector(".icone")
+
 // =========================
 // EVENTOS
 // =========================
@@ -37,9 +40,11 @@ input.addEventListener(
 async function buscarCidade(){
 
     const cidade =
-        document.querySelector("#cidade").value
+        input.value.trim()
 
+    // =========================
     // VALIDAÇÃO
+    // =========================
 
     if(cidade === ""){
 
@@ -49,7 +54,9 @@ async function buscarCidade(){
         return
     }
 
+    // =========================
     // LOADING
+    // =========================
 
     loading.innerHTML =
         "Carregando..."
@@ -61,7 +68,9 @@ async function buscarCidade(){
     botao.innerHTML =
         "Buscando..."
 
+    // =========================
     // API
+    // =========================
 
     const chave =
         "9b1143a7aacc99cba3d02c7319c1233d"
@@ -74,34 +83,42 @@ async function buscarCidade(){
             resposta => resposta.json()
         )
 
+        // =========================
         // CIDADE NÃO ENCONTRADA
+        // =========================
 
         if(dados.cod == "404"){
 
             loading.innerHTML =
                 "Cidade não encontrada"
 
+            botao.innerHTML =
+                "Buscar"
+
             weatherInfo.classList.remove(
                 "loading-weather"
             )
 
-            botao.innerHTML =
-                "Buscar"
-
             return
         }
 
+        // =========================
         // LIMPA LOADING
+        // =========================
 
         loading.innerHTML = ""
 
+        // =========================
         // CIDADE
+        // =========================
 
         document.querySelector(".cidade")
         .innerHTML =
             dados.name
 
+        // =========================
         // TEMPERATURA
+        // =========================
 
         document.querySelector(".temp")
         .innerHTML =
@@ -109,42 +126,56 @@ async function buscarCidade(){
                 dados.main.temp
             ) + "°C"
 
+        // =========================
         // DESCRIÇÃO
+        // =========================
 
         document.querySelector(".description")
         .innerHTML =
             dados.weather[0].description
 
+        // =========================
         // ÍCONE
+        // =========================
 
         const icone =
             dados.weather[0].icon
 
-        document.querySelector(".icone")
-        .src =
+        iconeClima.src =
             `https://openweathermap.org/img/wn/${icone}@2x.png`
 
+        iconeClima.style.opacity =
+            "1"
+
+        // =========================
         // UMIDADE
+        // =========================
 
         document.querySelector(".umidade")
         .innerHTML =
             "💧 Umidade: " +
             dados.main.humidity + "%"
 
+        // =========================
         // VENTO
+        // =========================
 
         document.querySelector(".vento")
         .innerHTML =
             "🌬️ Vento: " +
             dados.wind.speed + " km/h"
 
-        // ANIMAÇÃO
+        // =========================
+        // REMOVE LOADING
+        // =========================
 
         weatherInfo.classList.remove(
             "loading-weather"
         )
 
+        // =========================
         // BOTÃO
+        // =========================
 
         botao.innerHTML =
             "Buscar"
