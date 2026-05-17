@@ -1,49 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weather-app</title>
-    <link rel="stylesheet" href="style.css"
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Weather App
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 <body>
-     
+
+    <!-- VIDEO FUNDO -->
+
     <div class="video-container">
-    <video autoplay muted loop playsinline class="video-bg">
-    <source src="chuva.mp4" type="video/mp4">
-  </video>
 
-  <div class="overlay"></div>
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="video-bg"
+        >
 
-</div>
+            <source
+                src="chuva.mp4"
+                type="video/mp4"
+            >
+
+        </video>
+
+        <div class="overlay"></div>
+
+    </div>
+
+    <!-- CARD -->
 
     <div class="container">
-        <h1>🌤️ Weather App</h1>
+
+        <h1>
+           <h1>
+              🌦️ Clima Agora
+</h1>
+        </h1>
+
+        <p class="subtitle">
+            Consulte o clima em tempo real
+        </p>
+
+        <!-- BUSCA -->
+
         <div class="search-box">
-            <div class="weather-info">
-             <p class="loading"></p>
-             <h2 class="cidade"></h2>
-             <p class="temp"></p>
-             <p class="description"></p>
-             <img class="icone" alt="Ícone do clima">
-             <div class="details">
-      <p class="umidade"></p>
-<p class="vento"></p>
-            </div>
-        <input
-         type="text"
-         placeholder="Digite uma cidade"
-         id="cidade"
-         >
 
-         <button>
-            Buscar
-         </button>
+            <input
+                type="text"
+                placeholder="Digite uma cidade"
+                id="cidade"
+            >
+
+            <button>
+                Buscar
+            </button>
+
         </div>
-    </div>
-</div>
 
-<script src="script.js"></script>
-    
+        <!-- LOADING -->
+
+        <p class="loading"></p>
+
+        <!-- CLIMA -->
+
+        <div class="weather-info">
+
+            <h2 class="cidade"></h2>
+
+            <img
+                class="icone"
+                alt="Ícone do clima"
+            >
+
+            <p class="temp"></p>
+
+            <p class="description"></p>
+
+            <div class="details">
+
+                <p class="umidade"></p>
+
+                <p class="vento"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
