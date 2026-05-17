@@ -18,7 +18,7 @@ body{
 
     font-family:Arial,sans-serif;
 
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* =========================
@@ -140,11 +140,11 @@ h1{
 
     color:#b8dff5;
 
-    font-size:17px;
+    font-size:18px;
 
     line-height:1.5;
 
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
 /* =========================
@@ -247,7 +247,7 @@ BOTÃO
 
     transition:.3s;
 
-    min-width:120px;
+    min-width:110px;
 }
 
 .search-box button:hover{
@@ -343,6 +343,10 @@ DETALHES
 
     margin-top:10px;
 
+    opacity:0;
+
+    transition:.4s;
+
     filter:
     drop-shadow(
         0 0 10px rgba(255,255,255,0.2)
@@ -370,16 +374,26 @@ RESPONSIVO
 
 @media screen and (max-width:500px){
 
+    body{
+
+        padding:15px;
+    }
+
     .container{
 
         width:100%;
 
-        padding:35px 25px;
+        padding:35px 20px;
     }
 
     h1{
 
-        font-size:34px;
+        font-size:28px;
+    }
+
+    .subtitle{
+
+        font-size:16px;
     }
 
     .temp{
@@ -387,14 +401,26 @@ RESPONSIVO
         font-size:54px;
     }
 
+    .description{
+
+        font-size:20px;
+    }
+
     .search-box{
 
         flex-direction:column;
     }
 
+    .search-box input{
+
+        width:100%;
+    }
+
     .search-box button{
 
         width:100%;
+
+        min-width:100%;
     }
 
     .details{
@@ -404,5 +430,10 @@ RESPONSIVO
         align-items:center;
 
         gap:12px;
+    }
+
+    .icone{
+
+        width:110px;
     }
 }
