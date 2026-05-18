@@ -1,439 +1,246 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-body{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
-
-    font-family:Arial,sans-serif;
-
-    overflow-x:hidden;
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
-
 /* =========================
 VIDEO FUNDO
 ========================= */
 
-.video-container{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    z-index:-2;
+.video-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
 }
-
-.video-bg{
-
-    width:100vw;
-
-    height:100vh;
-
-    object-fit:cover;
-
-    filter:
-    blur(5px)
-    brightness(.55);
-
-    animation:
-    zoomVideo 18s linear infinite alternate;
+.video-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(5px) brightness(0.55);
+  animation: zoomVideo 18s linear infinite alternate;
 }
-
-@keyframes zoomVideo{
-
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.08);
-    }
+@keyframes zoomVideo {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }
-
 /* =========================
 OVERLAY
 ========================= */
-
-.overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    rgba(0,0,0,0.75);
-
-    z-index:1;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
 }
-
 /* =========================
 CARD PRINCIPAL
 ========================= */
-
-.container{
-
-    width:420px;
-
-    padding:40px 35px;
-
-    border-radius:28px;
-
-    background:
-    rgba(15,23,42,0.45);
-
-    backdrop-filter:blur(22px);
-
-    text-align:center;
-
-    color:#e6f7ff;
-
-    border:
-    1px solid rgba(255,255,255,0.10);
-
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.30),
-    0 0 30px rgba(0,191,255,0.08);
-
-    transition:.4s;
+.container {
+  width: 420px;
+  padding: 40px 35px;
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(22px);
+  text-align: center;
+  color: #e6f7ff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(0, 191, 255, 0.08);
+  transition: 0.4s;
 }
-
-.container:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 15px 45px rgba(0,191,255,0.18);
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 45px rgba(0, 191, 255, 0.18);
 }
-
 /* =========================
 TÍTULOS
 ========================= */
-
-h1{
-
-    font-size:42px;
-
-    font-weight:800;
-
-    color:#e6f7ff;
-
-    text-shadow:
-    0 0 20px rgba(0,191,255,0.25);
-
-    margin-bottom:10px;
+h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #e6f7ff;
+  text-shadow: 0 0 20px rgba(0, 191, 255, 0.25);
+  margin-bottom: 10px;
 }
-
-.subtitle{
-
-    color:#b8dff5;
-
-    font-size:18px;
-
-    line-height:1.5;
-
-    margin-bottom:15px;
+.subtitle {
+  color: #b8dff5;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
-
 /* =========================
 SEARCH BOX
 ========================= */
-
-.search-box{
-
-    margin-top:30px;
-
-    display:flex;
-
-    gap:12px;
-
-    width:100%;
+.search-box {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  width: 100%;
 }
-
 /* =========================
 INPUT
 ========================= */
-
-.search-box input{
-
-    flex:1;
-
-    height:58px;
-
-    border:none;
-
-    border-radius:16px;
-
-    background:
-    rgba(255,255,255,0.08);
-
-    border:
-    1px solid rgba(255,255,255,0.12);
-
-    backdrop-filter:blur(10px);
-
-    color:#e6f7ff;
-
-    padding-left:20px;
-
-    font-size:18px;
-
-    font-weight:500;
-
-    transition:.3s;
-
-    box-shadow:
-    0 0 10px rgba(0,191,255,0.08);
+.search-box input {
+  flex: 1;
+  height: 58px;
+  border: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: #e6f7ff;
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.08);
 }
-
-.search-box input::placeholder{
-
-    color:#8fbfd4;
-
-    font-weight:400;
+.search-box input::placeholder {
+  color: #8fbfd4;
+  font-weight: 400;
 }
-
-.search-box input:focus{
-
-    border:
-    1px solid #00bfff;
-
-    box-shadow:
-    0 0 18px rgba(0,191,255,0.35);
-
-    transform:translateY(-1px);
+.search-box input:focus {
+  border: 1px solid #00bfff;
+  box-shadow: 0 0 18px rgba(0, 191, 255, 0.35);
+  transform: translateY(-1px);
 }
-
 /* =========================
 BOTÃO
 ========================= */
-
-.search-box button{
-
-    padding:12px 20px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00bfff,
-        #0077ff
-    );
-
-    color:white;
-
-    font-weight:800;
-
-    font-size:17px;
-
-    letter-spacing:.5px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    min-width:110px;
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00bfff, #0077ff);
+  color: white;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 110px;
 }
-
-.search-box button:hover{
-
-    transform:
-    translateY(-2px);
-
-    box-shadow:
-    0 10px 20px rgba(0,191,255,0.25);
+.search-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 191, 255, 0.25);
 }
-
 /* =========================
 CLIMA
 ========================= */
-
-.weather-info{
-
-    margin-top:35px;
-
-    color:white;
-
-    transition:
-    opacity .4s ease,
-    transform .4s ease;
+.weather-info {
+  margin-top: 35px;
+  color: white;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
-
-.loading-weather{
-
-    opacity:.5;
-
-    transform:scale(.98);
+.loading-weather {
+  opacity: 0.5;
+  transform: scale(0.98);
 }
-
 /* =========================
 TEMPERATURA
 ========================= */
-
-.temp{
-
-    font-size:64px;
-
-    font-weight:800;
-
-    margin:20px 0;
-
-    color:#ffffff;
-
-    text-shadow:
-    0 0 20px rgba(255,255,255,0.15);
+.temp {
+  font-size: 64px;
+  font-weight: 800;
+  margin: 20px 0;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
-
 /* =========================
 DESCRIÇÃO
 ========================= */
-
-.description{
-
-    font-size:24px;
-
-    font-weight:600;
-
-    color:#b8dff5;
-
-    margin-bottom:20px;
+.description {
+  font-size: 24px;
+  font-weight: 600;
+  color: #b8dff5;
+  margin-bottom: 20px;
 }
-
 /* =========================
 DETALHES
 ========================= */
-
-.details{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:25px;
-
-    gap:15px;
-
-    font-size:17px;
-
-    color:#e6f7ff;
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 15px;
+  font-size: 17px;
+  color: #e6f7ff;
 }
-
 /* =========================
 ÍCONE
 ========================= */
-
-.icone{
-
-    width:130px;
-
-    margin-top:10px;
-
-    opacity:0;
-
-    transition:.4s;
-
-    filter:
-    drop-shadow(
-        0 0 10px rgba(255,255,255,0.2)
-    );
+.icone {
+  width: 130px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: 0.4s;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
-
 /* =========================
 LOADING
 ========================= */
-
-.loading{
-
-    margin-top:20px;
-
-    font-size:18px;
-
-    color:#e6f7ff;
-
-    font-weight:700;
+.loading {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #e6f7ff;
+  font-weight: 700;
 }
-
 /* =========================
 RESPONSIVO
 ========================= */
-
-@media screen and (max-width:500px){
-
-    body{
-
-        padding:15px;
-    }
-
-    .container{
-
-        width:100%;
-
-        padding:35px 20px;
-    }
-
-    h1{
-
-        font-size:28px;
-    }
-
-    .subtitle{
-
-        font-size:16px;
-    }
-
-    .temp{
-
-        font-size:54px;
-    }
-
-    .description{
-
-        font-size:20px;
-    }
-
-    .search-box{
-
-        flex-direction:column;
-    }
-
-    .search-box input{
-
-        width:100%;
-    }
-
-    .search-box button{
-
-        width:100%;
-
-        min-width:100%;
-    }
-
-    .details{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:12px;
-    }
-
-    .icone{
-
-        width:110px;
-    }
+@media screen and (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+  .container {
+    width: 100%;
+    padding: 35px 20px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+  .temp {
+    font-size: 54px;
+  }
+  .description {
+    font-size: 20px;
+  }
+  .search-box {
+    flex-direction: column;
+  }
+  .search-box input {
+    width: 100%;
+  }
+  .search-box button {
+    width: 100%;
+    min-width: 100%;
+  }
+  .details {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .icone {
+    width: 110px;
+  }
 }
